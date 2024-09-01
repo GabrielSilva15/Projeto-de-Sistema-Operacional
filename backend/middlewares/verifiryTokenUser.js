@@ -19,7 +19,7 @@ export async function verifyTokenUser(req, res, next) {
 
         let {email, sub} = jwt.verify(token, secret);
 
-        req.id_Staff = sub; //Settando o id do funcionário
+        req.id_User = sub; //Settando o id do funcionário
     } catch (error) {
         console.log(error);
 
