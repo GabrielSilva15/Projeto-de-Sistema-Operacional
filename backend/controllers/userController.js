@@ -71,7 +71,7 @@ export const updateUser = async(req,res)=>{
         //Verificando se existe um usuario com o ID passado
         const existUser = await prismaClient.user.findUnique({
             where: {
-                id: idUser
+                id:parseInt(idUser),
             }
         })  
 
@@ -83,13 +83,13 @@ export const updateUser = async(req,res)=>{
             where:{
                 email,
                 id:{
-                    not:idUser
+                    not:parseInt(idUser)
                 }
             }
         })
 
         if(existEmailUser){
-            return res.status(409).json({ error: "E-mail já existe" });
+            return res.status(409).json({ error: "E-mail já existe"});
         }
 
         //Criptografando a senha do usuário
@@ -100,7 +100,7 @@ export const updateUser = async(req,res)=>{
 
         const updateUser = await prismaClient.user.update({
             where:{
-                id:idUser
+                id:parseInt(idUser)
             },
             data:{
                 name,
@@ -151,7 +151,7 @@ export const deleteUser = async (req,res)=>{
 
         const userExist = await prismaClient.user.findUnique({
             where:{
-                id:idUser
+                id:parseInt(idUser)
             }
         })
 
@@ -161,7 +161,7 @@ export const deleteUser = async (req,res)=>{
 
         await prismaClient.user.delete({
             where:{
-                id:idUser
+                id:parseInt(idUser)
             }
         })
         res.status(200).json({ message: "Usuário deletado com sucesso!" });
