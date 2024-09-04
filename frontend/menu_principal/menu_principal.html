@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="menu_principal.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Confirmação de Presença</h1>
+            <p>Confirme sua presença para o uso do transporte hoje.</p>
+        </header>
+        <main>
+            <!-- Seção de confirmação de presença -->
+            <form id="attendanceForm">
+
+                <label for="shift">Turno de Ida:</label>
+                <select id="shift" name="shift" required>
+                    <option value="morning">Manhã</option>
+                    <option value="afternoon">Tarde</option>
+                    <option value="afternoon">Noite</option>
+                </select>
+
+                <label for="tripOption">Instituição de Parada</label>
+                <select id="tripOption" name="tripOption" required>
+                    <option value="only_go">IFPB</option>
+                    <option value="go_and_return">FAFIC</option>
+                    <option value="morning_and_afternoon">UFCG</option>
+                    <option value="morning_and_afternoon">UNIFSM</option>
+                    <option value="morning_and_afternoon">MASTERSGOLD</option>
+                </select>
+                
+                <label for="tripOption">Opções de viagem:</label>
+                <select id="tripOption" name="tripOption" required>
+                    <option value="only_go">Ida para Cajazeiras</option>
+                    <option value="go_and_return">Ida e volta para Cajazeiras</option>
+                </select>
+            
+                <label for="shift">Turno da Volta:</label>
+                <select id="shift" name="shift" required>
+                    <option value="morning">Manhã</option>
+                    <option value="afternoon">Tarde</option>
+                    <option value="afternoon">Noite</option>
+                </select>
+
+                <label for="tripOption">Instituição para Volta</label>
+                <select id="tripOption" name="tripOption" required>
+                    <option value="only_go">IFPB</option>
+                    <option value="go_and_return">FAFIC</option>
+                    <option value="morning_and_afternoon">UFCG</option>
+                    <option value="morning_and_afternoon">UNIFSM</option>
+                    <option value="morning_and_afternoon">MASTERSGOLD</option>
+                </select>
+                
+                <!-- Opções de agendamento -->
+                <label>Agendar para:</label>
+                <div class="schedule-options">
+                    <label><input type="checkbox" name="scheduleDays" value="monday"> Segunda-feira</label>
+                    <label><input type="checkbox" name="scheduleDays" value="tuesday"> Terça-feira</label>
+                    <label><input type="checkbox" name="scheduleDays" value="wednesday"> Quarta-feira</label>
+                    <label><input type="checkbox" name="scheduleDays" value="thursday"> Quinta-feira</label>
+                    <label><input type="checkbox" name="scheduleDays" value="friday"> Sexta-feira</label>
+                </div>
+
+                <button type="submit">Confirmar Presença</button>
+            </form>
+
+            <!-- Seção de feedback -->
+            <section class="feedback">
+                <h2>Feedback</h2>
+                <textarea id="feedbackText" placeholder="Deixe seu feedback sobre o serviço..."></textarea>
+                <textarea id="driverNotes" placeholder="Notas para o motorista (somente administração verá)..."></textarea>
+                
+                <div class="star-rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                
+                <button id="submitFeedback">Enviar Feedback</button>
+            </section>
+
+            <!-- Seção de opções de transporte alternativas -->
+            <section class="transport-options">
+                <h2>Opções de Transporte Alternativas</h2>
+                <div class="option">
+                    <img src="profile.jpg" alt="Foto de perfil de João" class="profile-pic">
+                    <p>Carona com João</p>
+                    <p>Preço: R$ 10,00</p>
+                    <button class="accept-ride">Aceitar Carona</button>
+                </div>
+            </section>
+
+            <!-- Seção de progresso de conquistas -->
+            <section class="achievement-progress">
+                <h2>Progresso de Conquistas</h2>
+                <p>Você confirmou sua presença por <span id="streakCount">3</span> dias consecutivos!</p>
+            </section>
+
+            <!-- Seção de gerenciamento de agendamentos -->
+            <section class="manage-schedule">
+                <h2>Gerenciar Agendamentos</h2>
+                <ul id="scheduledDaysList"></ul>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 - Seu Aplicativo de Transporte</p>
+    </footer>
+
+    <script>
+        // Armazena os dias agendados
+        let scheduledDays = [];
+
+        document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Coleta os dias selecionados
+            const selectedDays = Array.from(document.querySelectorAll('input[name="scheduleDays"]:checked')).map(checkbox => checkbox.value);
+
+            // Adiciona os dias selecionados ao array de dias agendados
+            scheduledDays = scheduledDays.concat(selectedDays);
+            updateScheduledDaysList();
+            alert('Presença confirmada para: ' + selectedDays.join(', '));
+        });
+
+        // Função para atualizar a lista de dias agendados
+        function updateScheduledDaysList() {
+            const scheduledDaysList = document.getElementById('scheduledDaysList');
+            scheduledDaysList.innerHTML = ''; // Limpa a lista
+
+            scheduledDays.forEach(day => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Agendado para: ${day}`;
+                
+                // Botão para desmarcar
+                const cancelButton = document.createElement('button');
+                cancelButton.textContent = 'Desmarcar';
+                cancelButton.onclick = function() {
+                    scheduledDays = scheduledDays.filter(d => d !== day);
+                    updateScheduledDaysList();
+                };
+
+                listItem.appendChild(cancelButton);
+                scheduledDaysList.appendChild(listItem);
+            });
+        }
+
+        // Lógica de feedback com estrelas
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                alert(`Você avaliou o serviço com ${rating} estrelas!`);
+                // Lógica para armazenar ou enviar a avaliação
+            });
+        });
+
+        // Lógica para lidar com modo offline
+        window.addEventListener('offline', function() {
+            alert('Você está offline. Sua confirmação será salva localmente.');
+            // Lógica para salvar dados localmente
+        });
+    </script>
+</body>
+</html>
