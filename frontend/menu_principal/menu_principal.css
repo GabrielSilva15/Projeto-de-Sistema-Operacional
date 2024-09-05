@@ -1,134 +1,300 @@
-/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Playball&family=Playfair:wght@400;500;700;900&family=Poppins:wght@500;700;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: #ffff;
     color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 20px; /* Adiciona espaçamento em volta da página */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita o overflow horizontal */
 }
 
 .container {
-    width: 100%;
-    height: 100%;
-    max-width: 600px;
+    max-width: 375px;
+    margin: 0 auto;
+    border-radius: 25px;
+    overflow: hidden;
     background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding-bottom: 60px; /* Espaço para o rodapé fixo */
+    position: relative; /* Para posicionamento relativo do rodapé */
+}
+
+.app-header2 {
+    background-color: #003C74;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    margin: 0 22px;
+}
+
+.app-header {
+    background-color: #ffffff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.header-info {
+    display: flex;
+    align-items: center;
+}
+
+.location-button, .date-button {
+    background-color: #003C74;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.location-button:hover, .date-button:hover {
+    background-color: #00284c;
+}
+
+.destination-section {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: start;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 20px;
+.destination-list li {
+    margin-bottom: 15px;
+    list-style-type: none;
 }
 
-header h1 {
-    font-size: 2em;
-    color: #333;
+.destination-list label {
+    display: block;
+    padding-left: 25px;
+    position: relative;
+    cursor: pointer;
 }
 
-header p {
-    font-size: 1em;
+.destination-list label span {
+    font-size: 12px;
     color: #666;
 }
 
-main {
-    margin-bottom: 20px;
+.destination-list input[type="radio"] {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-form, .feedback, .transport-options, .achievement-progress {
-    margin-bottom: 20px;
-}
-
-form label, .feedback h2, .transport-options h2, .achievement-progress h2 {
-    font-size: 1em;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-form input[type="text"], form input[type="date"], form select, textarea {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-form button, .feedback button, .accept-ride {
-    padding: 10px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-form button:hover, .feedback button:hover, .accept-ride:hover {
-    background-color: #0056b3;
-}
-
-.feedback textarea {
-    width: 100%;
-    height: 80px;
-    resize: none;
-    margin-bottom: 10px;
-}
-
-/* Estilos para o sistema de classificação por estrelas */
-.star-rating {
+.suggestions-section {
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: white;
+    flex-wrap: wrap; /* Adicionado para permitir quebra de linha em telas menores */
 }
 
-.star {
-    font-size: 2em;
-    cursor: pointer;
-    color: #ccc;
-    transition: color 0.2s;
-}
-
-.star:hover,
-.star.selected {
-    color: gold;
-}
-
-.transport-options .option {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.suggestion-card {
+    display: flex;
+    background-color: #003C74;
+    color: white;
+    border-radius: 15px;
     padding: 10px;
-    margin-bottom: 10px;
-    text-align: center;
+    width: 45%;
+    margin-bottom: 10px; /* Adicionado para espaçamento entre linhas */
 }
 
-/* Estilo para imagem de perfil */
-.profile-pic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+.suggestion-card img {
+    order: 2;
+    margin-left: 10px;
 }
 
-footer {
-    text-align: center;
+.suggestion-card strong {
+    font-size: 16px;
+    color: #fff;
+}
+
+.achievement-section {
+    padding: 15px;
+    background-color: #003C74;
+    border-radius: 32px;
+    margin: 0 22px 10px;
+}
+
+.achievement-card {
+    display: flex;
+    background-color: #003C74;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card img {
+    order: 2;
+    width: 40px;
+    margin-bottom: 30px;
+}
+
+.achievement-card span {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.ipaumirim-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-footer {
+    background-color: #003C74;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 375px; /* Limita a largura do rodapé ao contêiner */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o rodapé */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-item:hover {
+    color: #0259aa;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .app-header2, .achievement-section {
+        margin: 0 10px;
+    }
+
+    .suggestion-card {
+        width: 100%;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+select {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.confirm-button {
+    background-color: #003C74;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirm-button:hover {
+    background-color: #00284c;
+}
+
+#week-schedule {
     margin-top: 20px;
 }
 
-footer p {
-    font-size: 0.9em;
-    color: #999;
+#week-schedule label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+#week-schedule select {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
