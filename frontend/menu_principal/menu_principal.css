@@ -114,6 +114,12 @@ body {
     margin-bottom: 10px; /* Adicionado para espaçamento entre linhas */
 }
 
+.whats a.no-decoration {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto do parágrafo */
+}
+
+
 .suggestion-card img {
     order: 2;
     margin-left: 10px;
