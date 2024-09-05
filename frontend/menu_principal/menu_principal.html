@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCommute</title>
+    <link rel="stylesheet" href="menu_principal.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="icon-button">
+                <img src="/frontend/assets/img/logo.png" alt="Bus Icon">
+            </div>
+        </header>
+
+        <header class="app-header2">
+            <div class="icon-button">
+                <img src="/frontend/assets/img/lupa.svg" alt="Bus Icon">
+            </div>
+            <div class="header-info">
+                <button class="location-button">Para onde?</button>
+                <button class="date-button">06/09/2023</button>
+            </div>
+        </header>
+
+        <!-- Destination Section -->
+        <section class="destination-section">
+            <img src="/frontend/assets/img/Clock.svg" alt="Relógio" class="icon">
+            <ul class="destination-list">
+                <li>
+                    <input type="radio" id="option1" name="destination">
+                    <label for="option1">IFPB Campus Cajazeiras - Ida Manhã<br>
+                        <span>R. Jose Antonio da Silva, 300 - Cajazeiras</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section class="suggestions-section">
+            <div class="suggestion-card">
+                <img src="/frontend/assets/img/Car.svg" alt="Car Icon">
+                <p>Carona IP-CZ FAFIC<br>
+                   <strong>R$8</strong><br>
+                   Gabriel 06/09/2024
+                </p>
+            </div>
+            <div class="suggestion-card">
+                <img src="/frontend/assets/img/car2.svg" alt="Car Icon">
+                <p>Carona IP-CZ UFCG<br>
+                   <strong>R$8</strong><br>
+                   Rainan 10/09/2024
+                </p>
+            </div>
+        </section>
+
+        <!-- Achievement Section -->
+        <section class="achievement-section">
+            <div class="achievement-card">
+                <img src="/frontend/assets/img/Trophy.svg" alt="Trophy Icon">
+                <span>Lugar Garantido por 10 dias seguidos!</span>
+                <span>Obrigado por contribuir com a cidade!</span>
+            </div>
+        </section>
+        <section class="ipaumirim">
+            <div class="ipaumirim-logo">
+                <img src="/frontend/assets/img/logoIpaumirim.svg" alt="Logo Governo de Ipaumirim">
+            </div>
+        </section>
+    </div>
+
+<!-- Modal -->
+<div id="destinationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <form>
+            <label for="schedule-all-week">
+                <input type="checkbox" id="schedule-all-week" name="schedule-all-week">
+                Agendar ida todos os dias da semana (segunda a sexta)
+            </label>
+            
+            <label for="time">Horário</label>
+            <select id="time" name="time">
+                <option value="" disabled selected>Selecione o horário</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+            </select>
+            
+            <label for="destination">Destino</label>
+            <select id="destination" name="destination">
+                <option value="" disabled selected>Selecione o destino</option>
+                <option value="ufcg">UFCG</option>
+                <option value="fafic">FAFIC</option>
+                <option value="fasp">FASP</option>
+                <option value="ifpb">IFPB</option>
+                <option value="unifsm">UNIFSM</option>
+                <option value="masters-gold">MASTERS GOLD</option>
+                <option value="cidada">CIDADÃ</option>
+            </select>
+            
+            <label for="trip">Tipo de Viagem</label>
+            <select id="trip" name="trip">
+                <option value="" disabled selected>Selecione o tipo de viagem</option>
+                <option value="ida">Ida</option>
+                <option value="ida-volta">Ida e Volta</option>
+                <option value="volta">Volta</option>
+            </select>
+            
+            <div id="week-schedule" style="display: none;">
+                <label for="monday-time">Segunda-feira</label>
+                <select id="monday-time" name="monday-time">
+                    <option value="" disabled selected>Selecione o horário</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            
+                <label for="tuesday-time">Terça-feira</label>
+                <select id="tuesday-time" name="tuesday-time">
+                    <option value="" disabled selected>Selecione o horário</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            
+                <label for="wednesday-time">Quarta-feira</label>
+                <select id="wednesday-time" name="wednesday-time">
+                    <option value="" disabled selected>Selecione o horário</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            
+                <label for="thursday-time">Quinta-feira</label>
+                <select id="thursday-time" name="thursday-time">
+                    <option value="" disabled selected>Selecione o horário</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            
+                <label for="friday-time">Sexta-feira</label>
+                <select id="friday-time" name="friday-time">
+                    <option value="" disabled selected>Selecione o horário</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+            </div>         
+            <button type="submit" class="confirm-button">Confirmar</button>   
+        </form>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <nav class="footer-nav">
+            <a href="#" class="nav-item">
+                <img src="/frontend/assets/img/home.svg" alt="Início">
+                Início
+            </a>
+            <a href="#" class="nav-item">
+                <img src="/frontend/assets/img/Notes.svg" alt="Atividade">
+                Atividade
+            </a>
+            <a href="#" class="nav-item">
+                <img src="/frontend/assets/img/User.svg" alt="Conta">
+                Conta
+            </a>
+        </nav>
+    </footer>
+    
+    <script>
+        document.getElementById('schedule-all-week').addEventListener('change', function() {
+            var weekSchedule = document.getElementById('week-schedule');
+            var timeLabel = document.querySelector('label[for="time"]');
+            var timeSelect = document.getElementById('time');
+            
+            if (this.checked) {
+                weekSchedule.style.display = 'block';
+                timeLabel.style.display = 'none';
+                timeSelect.style.display = 'none';
+            } else {
+                weekSchedule.style.display = 'none';
+                timeLabel.style.display = 'block';
+                timeSelect.style.display = 'block';
+            }
+        });
+    </script>
+    
+    <script>
+        // Obter o modal
+        var modal = document.getElementById("destinationModal");
+    
+        // Obter o botão que abre o modal
+        var btn = document.querySelector(".location-button");
+    
+        // Obter o elemento <span> que fecha o modal
+        var span = document.getElementsByClassName("close-button")[0];
+    
+        // Quando o usuário clicar no botão, abre o modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    
+        // Quando o usuário clicar no <span> (x), fecha o modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        // Quando o usuário clicar fora do modal, fecha o modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>

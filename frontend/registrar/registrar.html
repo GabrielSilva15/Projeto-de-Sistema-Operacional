@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComuniCajá</title>
+    <link rel="icon" href="../assets/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="registrar.css">
+</head>
+<body>
+    <main id="container">       
+        <form id="login_form" action="../menu_principal/menu_principal.html">
+            <div id="form_header">
+                <h1>Registre-se</h1>
+            </div>
+            </div>
+            <div id="input">
+                <div class="input-box">
+                    <label for="name">
+                        Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="Nome" required>
+                        </div>
+                    </label>
+                </div><br>
+                <div class="input-box">
+                    <label for="matricula">
+                        Matricula
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="cpf" name="Matricula" oninput="formatarCPF(this)" required>
+                        </div>
+                    </label>
+                </div><br>
+                <div class="input-box">
+                    <label for="senha">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="password" name="senha" required>
+                        </div>
+                    </label>
+                </div><br>
+                <div class="input-box">
+                    <label for="campus">
+                        Campus
+                        <div class="input-field">
+                            <i class="fa-solid fa-building"></i>
+                            <input type="text" id="campus" name="Campus" required>
+                        </div>
+                    </label>
+                </div><br>
+                <div class="input-box">
+                    <label for="whatsapp">
+                        WhatsApp
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" id="whatsapp" name="WhatsApp" required>
+                        </div>
+                    </label>
+                </div><br>
+                <div class="input-box">
+                    <label for="senha">
+                        Confirme a senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="confirm-password" name="senha" required>
+                        </div>
+                    </label>
+                </div>
+            </div>             
+                <button type="submit" id="register_button">
+                        Registrar
+                </button>
+            <div class="registre">
+                <p><br>
+                    Já possui uma conta?
+                    <a href="../index.html">
+                    Entre agora
+                    </a>
+                </p>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        function formatarCPF(campo) {
+            let valor = campo.value.replace(/\D/g, '');
+            valor = valor.slice(0, 11);
+            if (valor.length <= 9) {
+                valor = valor.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3');
+            } else {
+                valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            }
+            campo.value = valor;
+        }
+    </script>
+</body>
+</html>
