@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    min-height: 100%;
+    background-color: rgba(210, 210, 210, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.head-home{
+    width: 30rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 20px 20px;
+    background-color: white;
+    padding: 10px;
+}
+
+.image-motorista{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(190, 190, 190)
+}
+
+.motorista{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.dados-motorista{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.nome-cargo{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.veiculo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.onibus{
+    display: flex;
+    gap: 10px;}
+
+.opcao{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(9, 42, 105, 1);
+    cursor: pointer;
+}
+
+.menu-nav{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-nav h3, .sec-rota h3 , .head-home{
+    color: rgba(9, 42, 105, 1);
+}
+
+.lista-nav{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width:100%;
+}
+
+.nav{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(9, 42, 105, 1);
+    border-radius: 10px;
+    width: 8rem;
+}
+
+.nav:hover{
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.nav > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+a > img{
+    width: 50%;
+}
+
+
+.sec-rota{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.rota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rota img{
+    border-radius: 50px;
+    width: 80%;
+}
+
+.rota-maps{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background-color: rgba(9, 42, 105, 1);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.quantidade-alunos{
+    
+    margin: 30px 0px 30px 0px;
+    color: rgba(9, 42, 105, 1);
+    text-align: center;
+}
+
+.comentario{
+    display: flex;
+    gap: 10px;
+    width: 25%;
+    background-color: rgba(9, 42, 105, 1);
+    border-radius: 40px;
+    color: white;
+    padding: 10px;
+}
+
+.image-aluno{
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.footer-home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center ;
+}
+
+.footer-home img{
+    width: 20%;
+}
+
+.outras-nav{
+    width: 100%;
+    background-color: rgba(9, 42, 105, 1);
+    display: flex;
+    height: 5vh;
+    list-style: none;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.outras-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+@media screen and (max-width: 992px) {
+
+    .head-home{
+        height: 10rem;
+    }
+
+    .motorista{
+        justify-content: space-around;
+    }
+
+    .comentario{
+        width: 50%;
+    }
+
+    .outras-nav{
+        padding: 0;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 640px) {
+
+    .head-home{
+      width: 100%;
+      border-radius: 0px 0px 50px 50px;
+    }
+
+    .motorista{
+        
+    }
+
+    .comentario{
+        width: 60%;
+        padding: 5px 20px;
+        font-size: 0.8rem;
+    }
+
+    .quantidade-alunos h1{
+        font-size: 1.2rem;
+    }
+
+    .rota img{
+        border-radius: 30px;
+    }
+
+
+    .rota-maps{
+        width: 150px;
+        height: 25px;
+        margin-top: -15px;
+    }
+
+
+    .nav img{
+        width: 40%;
+    }
+
+    .nav a{
+        font-size: small;
+    }
+
+    .outras-nav{
+        padding: 0;
+    }
+    
+}
+  
+/* For medium devices */
+@media screen and (max-width: 375px) {
+
+
+    .head-home{
+        padding: 0;
+    }
+
+    .comentario{
+        width: 80%;
+        font-size: 0.8rem;
+    }
+
+    .quantidade-alunos h1{
+        font-size: 1.2rem;
+    }
+
+    .footer-home img{
+        width: 50%;
+    }
+
+    .quantidade-alunos h1{
+        font-size: 1rem;
+    }
+
+    .outras-nav{
+        padding: 0;
+        height: 10vw;
+    }
+
+    .outras-nav a {
+        font-size: smaller;
+    }
+
+    .rota img{
+        border-radius: 30px;
+    }
+
+    .rota-maps{
+        width: 150px;
+        height: 25px;
+        margin-top: -15px;
+    }
+
+
+}
