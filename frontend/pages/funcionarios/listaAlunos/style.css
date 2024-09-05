@@ -41,7 +41,7 @@ table{
 }
 
 th{
-    color: white;
+    color: #011640;
     border: 1.5px solid rgba(9, 42, 105, 1);
     font-size: 1.5rem;
     font-weight: bold;
@@ -120,6 +120,18 @@ button{
         width: 20rem;   
     }
     
+
+    .nav img{
+        width: 40%;
+    }
+
+    .nav a{
+        font-size: small;
+    }
+
+    .outras-nav{
+        padding: 0;
+    }
     
 }
   
@@ -127,6 +139,13 @@ button{
 @media screen and (max-width: 375px) {
 
 
-   
+    .outras-nav{
+        padding: 0;
+        height: 10vw;
+    }
+
+    .outras-nav a {
+        font-size: smaller;
+    }
 
 }
