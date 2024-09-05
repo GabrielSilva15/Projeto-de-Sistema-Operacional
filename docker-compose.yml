@@ -4,8 +4,6 @@ services:
     container_name: trabalhofrontend
     ports: 
       - 8080:80
-    networks:
-      - trabalho  
       
 
 
