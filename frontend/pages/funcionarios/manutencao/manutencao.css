@@ -1,0 +1,133 @@
+body, html {
+    font-family: 'Montserrat', sans-serif; /* Trocando para Montserrat */
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assegura que o body ocupa pelo menos a altura total da viewport */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    flex: 1; /* Faz com que o conteúdo expanda para preencher o espaço disponível */
+}
+
+.revision-section, .chart-section {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    width: 100%; /* Adicionando largura para garantir responsividade */
+    max-width: 600px; /* Máximo de largura para evitar seções muito largas em telas grandes */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+.next-revision span {
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer-home {
+    width: 100%;
+    align-items: center;
+    background-color: rgba(9, 42, 105, 1);
+    padding: 10px 0;
+}
+
+.footer-home img {
+    width: 80px;
+    margin: 10px 0;
+}
+
+.outras-nav {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.outras-nav li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outras-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.outras-nav i {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .footer-home img {
+        width: 50px;
+    }
+
+    .outras-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .outras-nav a {
+        padding: 8px 0; /* Maior padding para melhorar a usabilidade em telas de toque */
+    }
+}
