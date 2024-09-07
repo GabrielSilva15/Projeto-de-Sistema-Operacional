@@ -37,3 +37,26 @@ button{
     border: none;
     cursor: pointer;
 }
+
+
+
+@media screen and (max-width: 992px) {
+
+    a{
+        width: 60vw;
+        height: 10vh;
+    }
+    
+}
+
+
+@media screen and (max-width: 640px) {
+
+
+}
+  
+/* For medium devices */
+@media screen and (max-width: 375px) {
+
+
+}

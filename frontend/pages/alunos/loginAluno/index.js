@@ -1,3 +1,4 @@
+// Adicionando um evento que mostra a tela de loading, enquanto espera o conteúdo principal carregar totalmente
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         document.getElementById('loading_screen').style.display = 'none';

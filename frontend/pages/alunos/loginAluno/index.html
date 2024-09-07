@@ -10,10 +10,14 @@
         <link rel="icon" href="../../../assets/img/" type="image/x-icon">
 </head>
 <body>
+
+    <!-- Tela de carregamento -->
     <div id="loading_screen">
         <div class="loader"></div>
         <img src="../../../assets/img/logo.png" alt="Logo" class="loading-logo">
     </div> 
+
+    <!-- Container que mostra o login pro usuário entrar no sistema -->
     <main id="container">       
         <form id="login_form" action="../../../menu_principal/menu_principal.html">
             <div id="form_header">
@@ -63,6 +67,7 @@
     </main>
 
     <script>
+        //Formatando a matricula informada para validar se é um CPF 
         function formatarCPF(campo) {
             let valor = campo.value.replace(/\D/g, '');
             valor = valor.slice(0, 11);

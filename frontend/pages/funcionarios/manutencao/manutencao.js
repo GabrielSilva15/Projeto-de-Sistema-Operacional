@@ -1,3 +1,5 @@
+
+//Criando os gráficos e definindo os dados que estão sendo utilizados
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('alunosChart').getContext('2d');
     const manhaData = {
@@ -34,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         }
     });
+
+    //Fazendo a troca de gráfico para o de manhã ou o da noite
     document.getElementById('toggleButton').addEventListener('click', function () {
         currentData = currentData === manhaData ? noiteData : manhaData;
         this.textContent = currentData === manhaData ? 'Trocar para Gráfico Noturno' : 'Trocar para Gráfico Matutino';
